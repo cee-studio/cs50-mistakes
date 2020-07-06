@@ -501,3 +501,23 @@ bool check(const char *word)
   # [4]  [libc-start-main]
 ```
 [demo](https://cee.studio/?bucket=200629-WCN&name=speller)
+
+### 21. [Speller] Returning too earlier
+`hash` returns before executing `free(lword)`.
+```
+unsigned int hash(const char *word)
+{
+    unsigned int hash = 0;
+    char *lword = malloc(sizeof(word));    //line 52
+    for (int a = 0; a < strlen(word); a++)
+    {
+        lword[a] = (char) tolower(word[a]);
+    }
+    for (int b = 0; b < 3; b++)
+    {
+        hash = hash + lword[b];
+    }
+    return hash;
+    free(lword);
+}
+```
