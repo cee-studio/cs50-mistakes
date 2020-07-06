@@ -11,7 +11,7 @@ Contributions are welcome and highly appreciated.
 The rules for contributions:
 
 1. obtain the entire source code for each mistake
-2. use https://cee.studio to create a executable demo link.
+2. use https://cee.studio to create an executable demo link.
 3. briefly describe each mistake
 4. include the original post link (if it's possible)
 
