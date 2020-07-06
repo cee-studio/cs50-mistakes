@@ -3,7 +3,7 @@
 These are collections of mistakes made by CS50x students in their C
 psets. The first category is for the mistakes that do not cause memory
 errors but produce incorrect results. The second category is for the
-mistakes that causes memory errors (e.g., segmentation faults).
+mistakes that causes memory errors (e.g., segmentation faults) and memory leaks.
 
 Contributions are welcome and highly appreciated.
 
