@@ -1,4 +1,4 @@
-# Common Mistakes of CS50 C psets
+# Mistakes of CS50 C psets
 
 These are collections of common mistakes made by CS50x students in
 their C psets. The first category is for the mistakes that do not
