@@ -1,6 +1,6 @@
-# Common Memory Errors
+# Memory Errors
 
-### 1. argv[1] is 0 if argc is 1. 
+### 1. [Caesar] argv[1] is 0 if argc is 1. 
 ```
 int main(int argc, string argv[])
 {
@@ -17,7 +17,7 @@ int main(int argc, string argv[])
 [demo](https://cee.studio/?bucket=200615-OwQ&name=fB6Xk)
 
 
-### 2. Too small to hold the null terminator
+### 2. [Recover] Too small to hold the null terminator
 ```
 char filename[8]; // Array to store my filename
 ...
@@ -43,7 +43,7 @@ sprintf(filename, "%03i.jpg", file_count);
   # [3]  file:/recover.c::46, 17
 ```
 
-### 3. Pasing an invalid buffer pointer to `fread`
+### 3. [Recover] Pasing an invalid buffer pointer to `fread`
 ```
  while (fread(buffer, 512, 1, fPointer) == 512)
     {
@@ -58,7 +58,7 @@ sprintf(filename, "%03i.jpg", file_count);
   # [1]  [libc-start-main]
 ```
 
-### 4. Passing an invalid pointer to `sprintf`. 
+### 4. [Recover] Passing an invalid pointer to `sprintf`
 ```
   char * jpg_filename = NULL;
   ...
@@ -73,7 +73,7 @@ sprintf(filename, "%03i.jpg", file_count);
   # [9]  file:/recover.c::39, 17
 ```
 
-### 5. Passing a NULL pointer to fscanf.
+### 5. [Speller] Passing a NULL pointer to `fscanf`
 ```
     char *nw = NULL;
     while (fscanf(dict, "%c", nw) != EOF)
@@ -87,7 +87,7 @@ sprintf(filename, "%03i.jpg", file_count);
   # [2]  [libc-start-main]
 ```
 
-### 6. Accessing the next field of NULL
+### 6. [Speller] Accessing the next field of NULL
 ```
             // table[hash(temp)] is NULL.
             node* n = malloc(sizeof(node)); 
@@ -108,7 +108,7 @@ sprintf(filename, "%03i.jpg", file_count);
 [demo](https://cee.studio/?bucket=200615-hQb&name=speller)
 
 
-### 7. Passing a non-pointer to fscanf
+### 7. [Speller] Passing a non-pointer to `fscanf`
 ```
     char *dictionaryword[LENGTH];
     while (fscanf(file, "%s", *dictionaryword) != EOF) // segfault here
@@ -124,7 +124,9 @@ sprintf(filename, "%03i.jpg", file_count);
 [demo](https://cee.studio/?bucket=200615-UYs&name=speller)
 
 
-### 8. A negligence
+### 8. [Speller] A negligence
+trav is assigned to the address of a new memoy block, but it is
+immediately overwritten by another value.
 ```
     node *trav = malloc(sizeof(node));
     trav = table[index];  // trav is overwritten
@@ -146,7 +148,7 @@ sprintf(filename, "%03i.jpg", file_count);
 [demo](https://cee.studio/?bucket=200615-1RB&name=speller)
 
 
-### 9. Using uninitialized memory
+### 9. [Speller] Using uninitialized memory
 ```
 Node* cursor = malloc(sizeof(Node));
 ...
@@ -180,7 +182,7 @@ Node* cursor = malloc(sizeof(Node));
 [demo](https://cee.studio/?bucket=200615-45p&name=speller)
 
 
-### 10. Not a modulo of N
+### 10. [Speller] Not a modulo of N
 ```
     int X = (hash (word)); // a negative value
     if (table[X] == NULL)  // line 35
@@ -207,7 +209,7 @@ Node* cursor = malloc(sizeof(Node));
 [demo](https://cee.studio/?bucket=200616-b27&name=speller)
 
 
-### 11. Accessing the next field of a NULL pointer
+### 11. [Speller] Accessing the next field of a NULL pointer
 ```
 bool unload(void)
 {
@@ -239,7 +241,7 @@ bool unload(void)
 ```
 [demo](https://cee.studio/?bucket=200616-0DT&name=speller)
 
-### 12. Passing a NULL pointer to fscanf.
+### 12. [Speller] Passing a NULL pointer to `fscanf`
 ```
 char * str = NULL;
 ...
@@ -256,9 +258,9 @@ while (fscanf(file, "%s", str) != EOF) {
 [demo](https://cee.studio/?bucket=200616-8WN&name=speller)
 
 
-### 13. A negligence
+### 13. [Recover] A negligence
+`byte` has the jpg data, but `buffer` is used to check for jpg header. 
 ```
-    // `byte` holds the data, but `buffer` is used to check for jpg header. 
     while ((fread(byte, 512, 1, card)) == 1)
     {
         BYTE buffer[512];
@@ -287,7 +289,7 @@ while (fscanf(file, "%s", str) != EOF) {
 [demo](https://cee.studio/?bucket=200618-l2V&name=recover)
 
 
-### 14. A logic error
+### 14. [Readability] A logic error
 ```
 do {
     j++;
@@ -320,7 +322,8 @@ do {
 [demo](https://cee.studio/?bucket=200620-307&name=CSwRu)
 
 
-### 15. Not understanding free
+### 15. [Speller] Not understanding free
+a node is immediately freed after adding to the hash table
 ```
     while(fscanf(file, "%s", w) != EOF)
     {
@@ -353,7 +356,7 @@ do {
 [demo](https://cee.studio/?bucket=200621-Bzs&name=speller)
 
 
-### 16. Not understanding fread
+### 16. [Recover] Not understanding `fread`
 ```
 while (fread(buffer, 512, 1, file) == 512) {
   img = fopen (...);
@@ -370,7 +373,7 @@ fclose(img); // segfault here
 ```
 [demo](https://cee.studio/?bucket=200624-Idc&name=recover)
 
-### 17. Use after free
+### 17. [Speller] Use after free
 ```
 void nullFree()
 {
@@ -407,10 +410,11 @@ void nullFree()
 ```
 [demo](https://cee.studio/?bucket=200627-SFw&name=speller.trie)
 
-### 18. Reading uninitialized Memory
+### 18. [Speller] Reading uninitialized Memory
+`word` is not fully initialized, and the loop is not terminated at `\0`.
 ```
    for (int i = 0; i < LENGTH; i++)
-        lcword[i] = tolower(word[i]); // <- word is not fully initialized.
+        lcword[i] = tolower(word[i]); 
 ```
 ```
   Memory access warning: reading uninitialized memory.
@@ -435,7 +439,7 @@ void nullFree()
 [demo](https://cee.studio/?bucket=200627-TAx&name=speller)
 
 
-### 19. Allocation is too small
+### 19. [Speller] Allocation is too small
 ```
     char *word = malloc(LENGTH);
     ...
@@ -467,7 +471,7 @@ void nullFree()
 [demo](https://cee.studio/?bucket=200627-Way&name=speller)
 
 
-### 20. Using an uninitialized pointer
+### 20. [Speller] Using an uninitialized pointer
 ```
 bool check(const char *word)
 {
