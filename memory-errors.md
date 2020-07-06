@@ -1,6 +1,7 @@
 # Memory Errors
 
-### 1. [Caesar] argv[1] is 0 if argc is 1. 
+### 1. [Caesar] argv[1] is 0 if argc is 1
+`argv` is an array of null terminated strings, and `argv` itself is null terminated. 
 ```
 int main(int argc, string argv[])
 {
@@ -18,6 +19,7 @@ int main(int argc, string argv[])
 
 
 ### 2. [Recover] Too small to hold the null terminator
+`filename` is one byte less to hold the null terminator. 
 ```
 char filename[8]; // Array to store my filename
 ...
@@ -43,7 +45,7 @@ sprintf(filename, "%03i.jpg", file_count);
   # [3]  file:/recover.c::46, 17
 ```
 
-### 3. [Recover] Pasing an invalid buffer pointer to `fread`
+### 3. [Recover] Passing an invalid buffer pointer to `fread`
 ```
  while (fread(buffer, 512, 1, fPointer) == 512)
     {
@@ -88,8 +90,8 @@ sprintf(filename, "%03i.jpg", file_count);
 ```
 
 ### 6. [Speller] Accessing the next field of NULL
+`table[hash(temp)]` can be NULL. 
 ```
-            // table[hash(temp)] is NULL.
             node* n = malloc(sizeof(node)); 
             if (table[hash(temp)] -> next != NULL) // segfault here
             {
@@ -109,6 +111,7 @@ sprintf(filename, "%03i.jpg", file_count);
 
 
 ### 7. [Speller] Passing a non-pointer to `fscanf`
+`dictionaryword` is address of an array, `*dictionaryword` is the value of the array's first element.
 ```
     char *dictionaryword[LENGTH];
     while (fscanf(file, "%s", *dictionaryword) != EOF) // segfault here
@@ -290,6 +293,7 @@ while (fscanf(file, "%s", str) != EOF) {
 
 
 ### 14. [Readability] A logic error
+Increasing the value of `j` in the inner nested loop without checking its upper bound.
 ```
 do {
     j++;
@@ -373,7 +377,7 @@ fclose(img); // segfault here
 ```
 [demo](https://cee.studio/?bucket=200624-Idc&name=recover)
 
-### 17. [Speller] Use after free
+### 17. [Speller.Trie] Use after free
 ```
 void nullFree()
 {
@@ -440,6 +444,7 @@ void nullFree()
 
 
 ### 19. [Speller] Allocation is too small
+`word` is one byte short to hold the null terminator.
 ```
     char *word = malloc(LENGTH);
     ...
@@ -472,10 +477,11 @@ void nullFree()
 
 
 ### 20. [Speller] Using an uninitialized pointer
+`test` is not initialized.
 ```
 bool check(const char *word)
 {
-    char *test;  // test is not initialized
+    char *test;
 
     int bucket = hash(word);
     node *trav = table[bucket];
