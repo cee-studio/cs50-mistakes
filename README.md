@@ -21,6 +21,7 @@ The rules for contributions:
 
 
 
-LICENSE:
- - the license of all the code templates and test data belongs to CS50x and Prof. David J. Malan. 
+LICENSES:
  - the mistake documentation is in the public domain
+ - the license of all the code templates and test data belongs to CS50x and Prof. David J. Malan.
+ - the mistaken code belongs to the original author
