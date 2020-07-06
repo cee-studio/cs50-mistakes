@@ -6,14 +6,14 @@ errors (e.g., segmentation faults) and memory leaks. The second
 category is for the mistakes that do not cause memory errors but
 produce incorrect results.
 
-Contributions are welcome and highly appreciated.
+Contributions are welcome and will be highly appreciated.
 
 The contribution guidelines:
 
-1. obtain the entire source code for each mistake
-2. use https://cee.studio to create an executable demo link.
-3. briefly describe each mistake
-4. include the original post link (if it's possible)
+1. Obtain the entire source code for each mistake
+2. Use https://cee.studio to create an executable demo link
+3. Describe briefly each mistake
+4. Include the original post link (if it's possible)
 
 ### [Memory Errors](memory-errors.md)
 
@@ -21,5 +21,5 @@ The contribution guidelines:
 
 
 LICENSES:
- - the mistake documentation is in the public domain
- - the copyright of all the code templates and test data belongs to CS50x and Prof. David J. Malan.
+ - The mistake documentation is in the public domain
+ - The copyright of all the code templates and test data belongs to CS50x and Prof. David J. Malan.
