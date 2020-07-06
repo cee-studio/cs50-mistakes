@@ -6,7 +6,7 @@ errors (e.g., segmentation faults) and memory leaks. The second
 category is for the mistakes that do not cause memory errors but
 produce incorrect results.
 
-Contributions are welcome and will be highly appreciated.
+Contributions are welcome.
 
 The contribution guidelines:
 
