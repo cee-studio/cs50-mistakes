@@ -1,9 +1,10 @@
 # Mistakes of CS50 C psets
 
 These are collections of mistakes made by CS50x students in their C
-psets. The first category is for the mistakes that do not cause memory
-errors but produce incorrect results. The second category is for the
-mistakes that causes memory errors (e.g., segmentation faults) and memory leaks.
+psets. The first category is for the mistakes that causes memory
+errors (e.g., segmentation faults) and memory leaks. The second
+category is for the mistakes that do not cause memory errors but
+produce incorrect results.
 
 Contributions are welcome and highly appreciated.
 
@@ -14,10 +15,9 @@ The contribution guidelines:
 3. briefly describe each mistake
 4. include the original post link (if it's possible)
 
-### [Logic Errors](logic-errors.md)
-
 ### [Memory Errors](memory-errors.md)
 
+### [Logic Errors](logic-errors.md)
 
 
 LICENSES:
