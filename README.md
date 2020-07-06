@@ -7,7 +7,7 @@ mistakes that causes memory errors (e.g., segmentation faults) and memory leaks.
 
 Contributions are welcome and highly appreciated.
 
-The rules for contributions:
+The contribution guidelines:
 
 1. obtain the entire source code for each mistake
 2. use https://cee.studio to create an executable demo link.
