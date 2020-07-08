@@ -521,3 +521,36 @@ unsigned int hash(const char *word)
     free(lword);
 }
 ```
+
+### 22. [Speller] A negligence
+`table[0]` always accesses the first element.
+```
+for (int i = 0; i < N; i++)
+    {
+        
+        node* temp = table[0];
+        
+        while (temp != NULL)
+        {
+            node* cursor = temp->next;
+            free(temp);
+            temp = cursor;
+        }
+        
+    }
+```
+```
+ Memory access error: reading from a freed memory space; abort execution.
+  # Reading 4 bytes from 0xa5673c0 will read undefined values.
+  #
+  # The memory-space-to-be-read (start:0xa567390, size:52 bytes) was allocated at
+  #    file:/dictionary.c::102, 19
+  # It was freed, and its allocation location might be distorted by subsequent reuses.
+  #
+  #
+  # Stack trace (most recent call first) of the read.
+  # [0]  file:/dictionary.c::148, 13
+  # [1]  file:/speller.c::153, 21
+  # [2]  [libc-start-main]
+```
+[demo](https://cee.studio/?bucket=200708-ulS&name=speller)
