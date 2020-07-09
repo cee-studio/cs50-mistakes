@@ -587,3 +587,34 @@ for (int i = 0; i < N; i++)
   # [3]  [libc-start-main]
 ```
 [demo](https://cee.studio/?bucket=200709-aMn&name=speller)
+
+### 24. [Speller.Trie] uninitialized pointer
+```
+    struct trie* current_node = root_node;
+    // Declare integer the length of the lowercase copy of word
+    int k = strlen(word_copy);
+    for (int i = 0; i < k; i++)
+    {
+        // Go to next node
+        current_node = current_node->children[word_copy[i] - 'a'];
+        // If current_node pointer is NULL we have reached the end of the path and the string has not been found
+        if (current_node == NULL)
+        {
+            return false;
+        }
+        // Move to next character in string
+        word_copy[i]++;
+    }
+    // If we have gotten through whole string, current node must be Leaf Node corresponding to that string
+    return (current_node->isLeaf);
+```
+```
+  Memory access error: dereferencing an uninitialized pointer; abort execution.
+  # Reading 1 bytes from a random address (0xf773879c).
+  #
+  # Stack trace (most recent call first) of the read.
+  # [0]  file:/dictionary.c::122, 5
+  # [1]  file:/speller.c::112, 32
+  # [2]  [libc-start-main]
+```
+[demo](https://cee.studio/?bucket=200709-Dr1&name=speller.trie)
