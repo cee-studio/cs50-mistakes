@@ -554,3 +554,36 @@ for (int i = 0; i < N; i++)
   # [2]  [libc-start-main]
 ```
 [demo](https://cee.studio/?bucket=200708-ulS&name=speller)
+
+
+### 23. [Speller] sizeof
+```
+   unsigned int hash = 0;
+   // char *lword = malloc(sizeof(*word) + 1);
+   char lword[sizeof(*word)];
+    for (int a = 0; a < strlen(word); a++)
+    {
+        lword[a] = (char) tolower(word[a]);
+    }
+```
+```
+  Memory access error: writing to the outside of a memory space; abort execution.
+  # Writing 1 bytes to 0xffa8608d will clobber other memory-spaces.
+  #
+  # The memory-space-to-be-written (start:0xffa8608c, size:1 bytes) is bound to 'lword' at
+  #    file:/dictionary.c::50, 9
+  #
+  #  0xffa8608c               0xffa8608c
+  #  +------------------------------+
+  #  |the memory-space-to-be-written|......
+  #  +------------------------------+
+  #                                  ^~~~~~~~~~
+  #        the write starts at 0xffa8608d that is right after the memory-space end.
+  #
+  # Stack trace (most recent call first) of the write.
+  # [0]  file:/dictionary.c::53, 27
+  # [1]  file:/dictionary.c::85, 25
+  # [2]  file:/speller.c::40, 19
+  # [3]  [libc-start-main]
+```
+[demo](https://cee.studio/?bucket=200709-aMn&name=speller)
