@@ -20,8 +20,4 @@ The contribution guidelines:
 ### [Logic Errors](logic-errors.md)
 
 
-* The included code can compile and generate an executable
-
-LICENSES:
- - The mistake documentation is in the public domain
- - The copyright of all the code templates and test data belongs to CS50x and Prof. David J. Malan.
+<footnote>*</footnote> The included code can compile and generate an executable
