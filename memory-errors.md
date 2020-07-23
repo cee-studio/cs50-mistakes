@@ -618,3 +618,62 @@ for (int i = 0; i < N; i++)
   # [2]  [libc-start-main]
 ```
 [demo](https://cee.studio/?bucket=200709-Dr1&name=speller.trie)
+
+### 25. [Speller] uninitalized pointer
+```
+while (fscanf(file, "%s", word) != EOF)
+{
+	//mallocs a node for each new word, creates node pointers
+	node *new_node = malloc(sizeof(node));
+
+	// safety check to ensure malloc succeded, if not it closes the program
+	if (new_node == NULL) {
+		//freeing space, so there is no leaks
+		unload();
+		return false;
+	}
+
+	//if malloc succeeds, copies word into node
+	strcpy(new_node -> word, word);
+
+	//initializes and calculates index of word for insertion into hashtable
+	int h = hash_index(new_node -> word);
+
+	//initializes head to point to hashtable index/bucket
+	node *head = hashtable[h];
+
+	// inserts new nodes a beginning of lists
+	if (head == NULL) {
+		hashtable[h] = new_node;
+		word_count++;
+	} else {
+		new_node -> next = hashtable[h];
+		hashtable[h] = new_node;
+		word_count++;
+	}
+}
+```
+
+```
+  Memory access warning: reading uninitialized memory; continue execution.
+  # Reading 4 bytes from 0x916adf0 will read undefined data.
+  #
+  # The memory-space-to-be-read (start:0x916adc0, size:52 bytes) is allocated at
+  #    file:/dictionary.c::156, 19
+  # It is not initialized.
+  #
+  #  0x916adc0               0x916adf3
+  #  +------------------------------+
+  #  | the memory-space-to-be-read  |
+  #  +------------------------------+
+  #                  ^~~~~~~~~~
+  #      the read starts at 48 bytes offset of the memory-space.
+  #
+  # Stack trace (most recent call first) of the read.
+  # [0]  file:/dictionary.c::241, 1
+  # [1]  file:/speller.c::153, 21
+  # [2]  [libc-start-main]
+  # This detection can be configured with DTS_MEMORY_UNINIT_CHECK=<error|warning|disabled>.
+```
+
+[demo](https://cee.studio/?name=speller.7jB5)
