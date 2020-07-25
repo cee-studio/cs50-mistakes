@@ -677,3 +677,41 @@ while (fscanf(file, "%s", word) != EOF)
 ```
 
 [demo](https://cee.studio/?name=speller.7jB5)
+
+### 26. [Recover] fclosing NULL
+```
+
+int main(int argc, char *argv[])
+{
+
+...
+
+    FILE *img = NULL;
+
+...
+
+        else if (counter > 0)
+        {
+                if( img != NULL)
+                {
+                    fwrite(buffer,512,1,img);
+                }
+        }
+    }
+
+    fclose(img);
+    fclose(card_raw);
+    return 0;
+}
+```
+
+```
+  Memory access error: invalid parameter; abort!
+  # fclose's parameter (0x0) is not a valid FILE pointer.
+  # Stack trace (most recent call first) of the error.
+  # [0]  file:/recover.c::80, 5
+  # [1]  [libc-start-main]
+Segmentation fault
+```
+
+[demo](https://cde.stensal.io/?bucket=200725-rpG&name=pset4-Recover.begg)
