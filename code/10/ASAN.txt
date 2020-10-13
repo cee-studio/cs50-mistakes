@@ -1,0 +1,43 @@
+=================================================================
+==19976==ERROR: AddressSanitizer: global-buffer-overflow on address 0x000000dd2db8 at pc 0x0000004f435e bp 0x7fffaff6c280 sp 0x7fffaff6c278
+READ of size 8 at 0x000000dd2db8 thread T0
+    #0 0x4f435d in check /root/cs50-mistakes/code/10/dictionary.c:35:9
+    #1 0x4f5481 in main /root/cs50-mistakes/code/10/speller.c:113:32
+    #2 0x7f012bbe309a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+    #3 0x41d319 in _start (/root/cs50-mistakes/code/10/b.asan+0x41d319)
+
+0x000000dd2db8 is located 52 bytes to the right of global variable 'sizez' defined in 'dictionary.c:23:5' (0xdd2d80) of size 4
+SUMMARY: AddressSanitizer: global-buffer-overflow /root/cs50-mistakes/code/10/dictionary.c:35:9 in check
+Shadow bytes around the buggy address:
+  0x0000801b2560: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0000801b2570: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0000801b2580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0000801b2590: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0000801b25a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0000801b25b0: 04 f9 f9 f9 f9 f9 f9[f9]00 00 00 00 00 00 00 00
+  0x0000801b25c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0000801b25d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0000801b25e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0000801b25f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0000801b2600: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==19976==ABORTING

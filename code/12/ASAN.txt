@@ -1,0 +1,14 @@
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==20072==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x0000004f4441 bp 0x7ffc03a3f730 sp 0x7ffc03a3f710 T0)
+==20072==The signal is caused by a READ memory access.
+==20072==Hint: address points to the zero page.
+    #0 0x4f4440 in hash /root/cs50-mistakes/code/12/dictionary.c:83:15
+    #1 0x4f4523 in load /root/cs50-mistakes/code/12/dictionary.c:123:17
+    #2 0x4f4b77 in main /root/cs50-mistakes/code/12/speller.c:40:19
+    #3 0x7fca1016509a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+    #4 0x41d309 in _start (/root/cs50-mistakes/code/12/b.asan+0x41d309)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /root/cs50-mistakes/code/12/dictionary.c:83:15 in hash
+==20072==ABORTING

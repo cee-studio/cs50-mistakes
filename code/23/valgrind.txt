@@ -1,0 +1,49 @@
+==20468== Memcheck, a memory error detector
+==20468== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==20468== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==20468== Command: b small lalaland.txt
+==20468== 
+==20468== Invalid read of size 1
+==20468==    at 0x4838C62: strlen (vg_replace_strmem.c:460)
+==20468==    by 0x4012AA: hash (dictionary.c:51)
+==20468==    by 0x4013E7: load (dictionary.c:85)
+==20468==    by 0x4015B4: main (speller.c:40)
+==20468==  Address 0x4a16970 is 9,600 bytes inside an unallocated block of size 4,189,168 in arena "client"
+==20468== 
+==20468== Invalid read of size 1
+==20468==    at 0x4838C62: strlen (vg_replace_strmem.c:460)
+==20468==    by 0x401302: hash (dictionary.c:57)
+==20468==    by 0x4013E7: load (dictionary.c:85)
+==20468==    by 0x4015B4: main (speller.c:40)
+==20468==  Address 0x4a16970 is 9,600 bytes inside an unallocated block of size 4,189,168 in arena "client"
+==20468== 
+==20468== Invalid read of size 8
+==20468==    at 0x4013EC: load (dictionary.c:85)
+==20468==    by 0x4015B4: main (speller.c:40)
+==20468==  Address 0x3936be3b8 is not stack'd, malloc'd or (recently) free'd
+==20468== 
+==20468== 
+==20468== Process terminating with default action of signal 11 (SIGSEGV)
+==20468==  Access not within mapped region at address 0x3936BE3B8
+==20468==    at 0x4013EC: load (dictionary.c:85)
+==20468==    by 0x4015B4: main (speller.c:40)
+==20468==  If you believe this happened as a result of a stack
+==20468==  overflow in your program's main thread (unlikely but
+==20468==  possible), you can try to increase the size of the
+==20468==  main thread stack using the --main-stacksize= flag.
+==20468==  The main thread stack size used in this run was 8388608.
+==20468== 
+==20468== HEAP SUMMARY:
+==20468==     in use at exit: 664 bytes in 3 blocks
+==20468==   total heap usage: 4 allocs, 1 frees, 4,760 bytes allocated
+==20468== 
+==20468== LEAK SUMMARY:
+==20468==    definitely lost: 0 bytes in 0 blocks
+==20468==    indirectly lost: 0 bytes in 0 blocks
+==20468==      possibly lost: 0 bytes in 0 blocks
+==20468==    still reachable: 664 bytes in 3 blocks
+==20468==         suppressed: 0 bytes in 0 blocks
+==20468== Rerun with --leak-check=full to see details of leaked memory
+==20468== 
+==20468== For counts of detected and suppressed errors, rerun with: -v
+==20468== ERROR SUMMARY: 5 errors from 3 contexts (suppressed: 0 from 0)

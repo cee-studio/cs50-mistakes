@@ -1,0 +1,35 @@
+==20005== Memcheck, a memory error detector
+==20005== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==20005== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==20005== Command: b small lalaland.txt
+==20005== 
+==20005== Invalid read of size 8
+==20005==    at 0x4014BE: unload (dictionary.c:132)
+==20005==    by 0x401A96: main (speller.c:153)
+==20005==  Address 0x30 is not stack'd, malloc'd or (recently) free'd
+==20005== 
+==20005== 
+==20005== Process terminating with default action of signal 11 (SIGSEGV)
+==20005==  Access not within mapped region at address 0x30
+==20005==    at 0x4014BE: unload (dictionary.c:132)
+==20005==    by 0x401A96: main (speller.c:153)
+==20005==  If you believe this happened as a result of a stack
+==20005==  overflow in your program's main thread (unlikely but
+==20005==  possible), you can try to increase the size of the
+==20005==  main thread stack using the --main-stacksize= flag.
+==20005==  The main thread stack size used in this run was 8388608.
+==20005== 
+==20005== HEAP SUMMARY:
+==20005==     in use at exit: 608 bytes in 2 blocks
+==20005==   total heap usage: 6 allocs, 4 frees, 9,408 bytes allocated
+==20005== 
+==20005== LEAK SUMMARY:
+==20005==    definitely lost: 0 bytes in 0 blocks
+==20005==    indirectly lost: 0 bytes in 0 blocks
+==20005==      possibly lost: 0 bytes in 0 blocks
+==20005==    still reachable: 608 bytes in 2 blocks
+==20005==         suppressed: 0 bytes in 0 blocks
+==20005== Rerun with --leak-check=full to see details of leaked memory
+==20005== 
+==20005== For counts of detected and suppressed errors, rerun with: -v
+==20005== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

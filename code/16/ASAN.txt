@@ -1,0 +1,15 @@
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==20217==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000039 (pc 0x7f6c2bf8ed41 bp 0x00005591ef59 sp 0x7ffe5591d770 T0)
+==20217==The signal is caused by a READ memory access.
+==20217==Hint: address points to the zero page.
+    #0 0x7f6c2bf8ed40 in _IO_file_close_it (/lib/x86_64-linux-gnu/libc.so.6+0x7bd40)
+    #1 0x7f6c2bf8290e in fclose (/lib/x86_64-linux-gnu/libc.so.6+0x6f90e)
+    #2 0x493954 in __interceptor_fclose (/root/cs50-mistakes/code/16/b.asan+0x493954)
+    #3 0x4f4852 in main /root/cs50-mistakes/code/16/recover.c:81:3
+    #4 0x7f6c2bf3709a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+    #5 0x41d2d9 in _start (/root/cs50-mistakes/code/16/b.asan+0x41d2d9)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x7bd40) in _IO_file_close_it
+==20217==ABORTING

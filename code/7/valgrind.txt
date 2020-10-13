@@ -1,0 +1,49 @@
+==19740== Memcheck, a memory error detector
+==19740== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==19740== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==19740== Command: ./b.exe small lalaland.txt
+==19740== 
+==19740== Conditional jump or move depends on uninitialised value(s)
+==19740==    at 0x48B3087: _IO_vfscanf (vfscanf.c:1018)
+==19740==    by 0x48BCC55: __isoc99_fscanf (isoc99_fscanf.c:34)
+==19740==    by 0x4013EC: load (dictionary.c:92)
+==19740==    by 0x401814: main (speller.c:40)
+==19740== 
+==19740== Use of uninitialised value of size 8
+==19740==    at 0x4012EF: hash (dictionary.c:67)
+==19740==    by 0x401401: load (dictionary.c:94)
+==19740==    by 0x401814: main (speller.c:40)
+==19740== 
+==19740== Invalid read of size 1
+==19740==    at 0x4012EF: hash (dictionary.c:67)
+==19740==    by 0x401401: load (dictionary.c:94)
+==19740==    by 0x401814: main (speller.c:40)
+==19740==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==19740== 
+==19740== 
+==19740== Process terminating with default action of signal 11 (SIGSEGV)
+==19740==  Access not within mapped region at address 0x0
+==19740==    at 0x4012EF: hash (dictionary.c:67)
+==19740==    by 0x401401: load (dictionary.c:94)
+==19740==    by 0x401814: main (speller.c:40)
+==19740==  If you believe this happened as a result of a stack
+==19740==  overflow in your program's main thread (unlikely but
+==19740==  possible), you can try to increase the size of the
+==19740==  main thread stack using the --main-stacksize= flag.
+==19740==  The main thread stack size used in this run was 8388608.
+==19740== 
+==19740== HEAP SUMMARY:
+==19740==     in use at exit: 552 bytes in 1 blocks
+==19740==   total heap usage: 2 allocs, 1 frees, 4,648 bytes allocated
+==19740== 
+==19740== LEAK SUMMARY:
+==19740==    definitely lost: 0 bytes in 0 blocks
+==19740==    indirectly lost: 0 bytes in 0 blocks
+==19740==      possibly lost: 0 bytes in 0 blocks
+==19740==    still reachable: 552 bytes in 1 blocks
+==19740==         suppressed: 0 bytes in 0 blocks
+==19740== Rerun with --leak-check=full to see details of leaked memory
+==19740== 
+==19740== For counts of detected and suppressed errors, rerun with: -v
+==19740== Use --track-origins=yes to see where uninitialised values come from
+==19740== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)

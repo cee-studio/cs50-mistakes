@@ -1,0 +1,50 @@
+=================================================================
+==20471==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7ffef6be9061 at pc 0x0000004f55b3 bp 0x7ffef6be9030 sp 0x7ffef6be9028
+WRITE of size 1 at 0x7ffef6be9061 thread T0
+    #0 0x4f55b2 in hash /root/cs50-mistakes/code/23/dictionary.c:53:18
+    #1 0x4f58b8 in load /root/cs50-mistakes/code/23/dictionary.c:85:25
+    #2 0x4f5e47 in main /root/cs50-mistakes/code/23/speller.c:40:19
+    #3 0x7f998ad4309a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+    #4 0x41e319 in _start (/root/cs50-mistakes/code/23/b.asan+0x41e319)
+
+Address 0x7ffef6be9061 is located in stack of thread T0 at offset 33 in frame
+    #0 0x4f53ff in hash /root/cs50-mistakes/code/23/dictionary.c:47
+
+  This frame has 1 object(s):
+    [32, 33) 'lword' (line 50) <== Memory access at offset 33 overflows this variable
+HINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork
+      (longjmp and C++ exceptions *are* supported)
+SUMMARY: AddressSanitizer: stack-buffer-overflow /root/cs50-mistakes/code/23/dictionary.c:53:18 in hash
+Shadow bytes around the buggy address:
+  0x10005ed751b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x10005ed751c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x10005ed751d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x10005ed751e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x10005ed751f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x10005ed75200: 00 00 00 00 00 00 00 00 f1 f1 f1 f1[01]f3 f3 f3
+  0x10005ed75210: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x10005ed75220: 00 00 00 00 00 00 00 00 00 00 00 00 f1 f1 f1 f1
+  0x10005ed75230: 00 00 00 00 00 06 f3 f3 f3 f3 f3 f3 00 00 00 00
+  0x10005ed75240: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x10005ed75250: 00 00 00 00 00 00 00 00 00 00 00 00 f1 f1 f1 f1
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==20471==ABORTING

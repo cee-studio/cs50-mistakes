@@ -1,0 +1,36 @@
+==20138== Memcheck, a memory error detector
+==20138== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==20138== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==20138== Command: ./b
+==20138== 
+==20138== Invalid read of size 1
+==20138==    at 0x401276: main (prog.c:40)
+==20138==  Address 0x4a13616 is 0 bytes after a block of size 6 alloc'd
+==20138==    at 0x4837D7B: realloc (vg_replace_malloc.c:826)
+==20138==    by 0x484B4DC: get_string (in /usr/local/lib/libcs50.so.10.1.1)
+==20138==    by 0x401196: main (prog.c:23)
+==20138== 
+==20138== 
+==20138== Process terminating with default action of signal 11 (SIGSEGV)
+==20138==  Access not within mapped region at address 0x4E13000
+==20138==    at 0x401276: main (prog.c:40)
+==20138==  If you believe this happened as a result of a stack
+==20138==  overflow in your program's main thread (unlikely but
+==20138==  possible), you can try to increase the size of the
+==20138==  main thread stack using the --main-stacksize= flag.
+==20138==  The main thread stack size used in this run was 8388608.
+==20138== 
+==20138== HEAP SUMMARY:
+==20138==     in use at exit: 14 bytes in 2 blocks
+==20138==   total heap usage: 8 allocs, 6 frees, 1,053 bytes allocated
+==20138== 
+==20138== LEAK SUMMARY:
+==20138==    definitely lost: 0 bytes in 0 blocks
+==20138==    indirectly lost: 0 bytes in 0 blocks
+==20138==      possibly lost: 0 bytes in 0 blocks
+==20138==    still reachable: 14 bytes in 2 blocks
+==20138==         suppressed: 0 bytes in 0 blocks
+==20138== Rerun with --leak-check=full to see details of leaked memory
+==20138== 
+==20138== For counts of detected and suppressed errors, rerun with: -v
+==20138== ERROR SUMMARY: 4192739 errors from 1 contexts (suppressed: 0 from 0)

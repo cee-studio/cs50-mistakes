@@ -1,0 +1,57 @@
+=================================================================
+==20245==ERROR: AddressSanitizer: heap-use-after-free on address 0x611000000048 at pc 0x0000004f6647 bp 0x7fff40145a50 sp 0x7fff40145a48
+READ of size 8 at 0x611000000048 thread T0
+    #0 0x4f6646 in nullFree /root/cs50-mistakes/code/17/dictionary.c:179:12
+    #1 0x4f5d3e in unload /root/cs50-mistakes/code/17/dictionary.c:167:9
+    #2 0x4f7286 in main /root/cs50-mistakes/code/17/speller.c:152:21
+    #3 0x7f094c55809a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+    #4 0x41e319 in _start (/root/cs50-mistakes/code/17/b.asan+0x41e319)
+
+0x611000000048 is located 8 bytes inside of 224-byte region [0x611000000040,0x611000000120)
+freed by thread T0 here:
+    #0 0x4c5de2 in __interceptor_free (/root/cs50-mistakes/code/17/b.asan+0x4c5de2)
+    #1 0x4f66a2 in nullFree /root/cs50-mistakes/code/17/dictionary.c:182:20
+    #2 0x4f5d3e in unload /root/cs50-mistakes/code/17/dictionary.c:167:9
+    #3 0x4f7286 in main /root/cs50-mistakes/code/17/speller.c:152:21
+    #4 0x7f094c55809a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+previously allocated by thread T0 here:
+    #0 0x4c6163 in malloc (/root/cs50-mistakes/code/17/b.asan+0x4c6163)
+    #1 0x4f5426 in load /root/cs50-mistakes/code/17/dictionary.c:35:12
+    #2 0x4f6a87 in main /root/cs50-mistakes/code/17/speller.c:40:19
+    #3 0x7f094c55809a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2409a)
+
+SUMMARY: AddressSanitizer: heap-use-after-free /root/cs50-mistakes/code/17/dictionary.c:179:12 in nullFree
+Shadow bytes around the buggy address:
+  0x0c227fff7fb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff7fc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff7fd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff7fe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff7ff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0c227fff8000: fa fa fa fa fa fa fa fa fd[fd]fd fd fd fd fd fd
+  0x0c227fff8010: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c227fff8020: fd fd fd fd fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c227fff8030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c227fff8040: 00 00 00 00 00 00 00 00 00 00 00 00 fa fa fa fa
+  0x0c227fff8050: fa fa fa fa fa fa fa fa 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==20245==ABORTING
