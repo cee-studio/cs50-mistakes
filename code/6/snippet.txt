@@ -1,5 +1,5 @@
 node* n = malloc(sizeof(node)); 
 if (table[hash(temp)] -> next != NULL) // segfault here
 {
-  n = table[hash(temp)] -> next;
+    n = table[hash(temp)] -> next;
 }
