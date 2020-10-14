@@ -5,74 +5,74 @@
 	},
 	{
 		"folder":"6",
-		"desc":"speller(segfault)"
+		"desc":"speller(NULL)"
 	},
 	{
 		"folder":"7",
-		"desc":"7"
+		"desc":"speller(fscanf)"
 	},
 	{
 		"folder":"8",
-		"desc":"8"
+		"desc":"speller(negligence)"
 	},
 	{
 		"folder":"9",
-		"desc":"9"
+		"desc":"speller(uninitialized)"
 	},
 	{
 		"folder":"10",
-		"desc":"10"
+		"desc":"speller(modulo)"
 	},
 	{
 		"folder":"11",
-		"desc":"11"
+		"desc":"speller(NULL)"
 	},
 	{
 		"folder":"12",
-		"desc":"12"
+		"desc":"speller(fscanf)"
 	},
 	{
 		"folder":"13",
-		"desc":"13"
+		"desc":"recover(negligence)"
 	},
 	{
 		"folder":"14",
-		"desc":"14"
+		"desc":"readability"
 	},
 	{
 		"folder":"15",
-		"desc":"15"
+		"desc":"speller(free)"
 	},
 	{
 		"folder":"16",
-		"desc":"16"
+		"desc":"recover(fread)"
 	},
 	{
 		"folder":"17",
-		"desc":"17"
+		"desc":"speller(use-after-free)"
 	},
 	{
 		"folder":"18",
-		"desc":"18"
+		"desc":"speller(uninitialized)"
 	},
 	{
 		"folder":"19",
-		"desc":"19"
+		"desc":"speller(size)"
 	},
 	{
 		"folder":"20",
-		"desc":"20"
+		"desc":"speller(pointer)"
 	},
 	{
 		"folder":"22",
-		"desc":"22"
+		"desc":"speller(negligence)"
 	},
 	{
 		"folder":"23",
-		"desc":"23"
+		"desc":"speller(sizeof)"
 	},
 	{
 		"folder":"24",
-		"desc":"24"
+		"desc":"speller(pointer)"
 	}
 ]
