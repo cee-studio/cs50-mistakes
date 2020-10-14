@@ -1,0 +1,4 @@
+  while (fread(buffer, 512, 1, file) == 512) {
+    img = fopen (...);
+  }
+  fclose(img); // segfault here

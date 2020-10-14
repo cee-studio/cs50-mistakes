@@ -1,0 +1,16 @@
+void nullFree()
+{
+    for(int i = 0; i < N; i++)
+    {
+        if(current->children[i] == NULL) // current points to a freed memory block
+        {
+            printf("NULL");
+            return free(current);
+        }
+        else
+        {
+            current = current->children[i];
+            nullFree();
+        }
+    }
+}

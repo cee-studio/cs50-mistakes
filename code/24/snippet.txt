@@ -1,0 +1,17 @@
+    struct trie* current_node = root_node;
+    // Declare integer the length of the lowercase copy of word
+    int k = strlen(word_copy);
+    for (int i = 0; i < k; i++)
+    {
+        // Go to next node
+        current_node = current_node->children[word_copy[i] - 'a'];
+        // If current_node pointer is NULL we have reached the end of the path and the string has not been found
+        if (current_node == NULL)
+        {
+            return false;
+        }
+        // Move to next character in string
+        word_copy[i]++;
+    }
+    // If we have gotten through whole string, current node must be Leaf Node corresponding to that string
+    return (current_node->isLeaf);

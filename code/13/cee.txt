@@ -1,0 +1,17 @@
+  Memory access warning: reading uninitialized memory.
+  # Reading 1 bytes from 0xff84b60c will read undefined data.
+  #
+  # The memory-block-to-be-read (start:0xff84b60c, size:512 bytes) is bound to 'buffer' at
+  #    file:/recover.c::26, 14
+  # It is not initialized.
+  #
+  #  0xff84b60c           0xff84b80b
+  #  +--------------------------+
+  #  | memory-block-to-be-read  |
+  #  +--------------------------+
+  #  ^~~~~~~~~~
+  #      the read starts at the begin of the memory block.
+  #
+  # Stack trace (most recent call first) of the read.
+  # [0]  file:/recover.c::28, 13
+  # [1]  [libc-start-main]

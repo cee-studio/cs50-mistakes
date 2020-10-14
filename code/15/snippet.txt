@@ -1,0 +1,12 @@
+    while(fscanf(file, "%s", w) != EOF)
+    {
+        node *n = malloc(sizeof(node));
+	
+        ...
+        n -> next = table[pos];
+        table[pos] = n;
+	
+	...
+        // Free the allocated memory
+        free(n);
+    }

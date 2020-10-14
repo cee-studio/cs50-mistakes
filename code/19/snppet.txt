@@ -1,0 +1,5 @@
+    char *word = malloc(LENGTH);
+    ...
+    //Iterate over dictionary until fscanf return EOF (meaning it's the end of the file)
+    while (fscanf(dicfile, "%s", word) != EOF)
+    {

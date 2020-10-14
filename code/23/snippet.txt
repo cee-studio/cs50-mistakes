@@ -1,0 +1,7 @@
+   unsigned int hash = 0;
+   // char *lword = malloc(sizeof(*word) + 1);
+   char lword[sizeof(*word)];
+    for (int a = 0; a < strlen(word); a++)
+    {
+        lword[a] = (char) tolower(word[a]);
+    }

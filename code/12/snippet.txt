@@ -1,0 +1,3 @@
+  char * str = NULL;
+  ...
+  while (fscanf(file, "%s", str) != EOF) {

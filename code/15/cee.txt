@@ -1,0 +1,13 @@
+  Memory access error: reading from a freed memory block; abort execution.
+  # Reading 1 bytes from 0x928ddc0 will read undefined values.
+  #
+  # The memory-block-to-be-read (start:0x928ddc0, size:52 bytes) was allocated at
+  #    file:/dictionary.c::47, 19
+  # It was freed, and its allocation location might be distorted by subsequent reuses.
+  #
+  #
+  # Stack trace (most recent call first) of the read.
+  # [0]  file:/musl-1.1.10/src/string/strcasecmp.c::8, 2
+  # [1]  file:/dictionary.c::108, 13
+  # [2]  file:/speller.c::113, 32
+  # [3]  [libc-start-main]

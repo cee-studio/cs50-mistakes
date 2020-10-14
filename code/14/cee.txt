@@ -1,0 +1,16 @@
+ Memory access error: reading from the outside of a memory block; abort execution.
+  # Reading 1 bytes from 0x99c4025 will read undefined values.
+  #
+  # The memory-block-to-be-read (start:0x99c4010, size:21 bytes) is allocated at
+  #    file:/tmp/src/libcs50/src/cs50.c::185, 16
+  #
+  #  0x99c4010           0x99c4024
+  #  +--------------------------+
+  #  | memory-block-to-be-read  |......
+  #  +--------------------------+
+  #                              ^~~~~~~~~~
+  #        the read starts at 0x99c4025 that is right after the memory block end.
+  #
+  # Stack trace (most recent call first) of the read.
+  # [0]  file:/prog.c::40, 5
+  # [1]  [libc-start-main]

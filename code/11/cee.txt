@@ -1,0 +1,7 @@
+  Memory access error: dereferencing a non-pointer; abort execution.
+  # Reading 4 bytes from an illegit address (0x30).
+  #
+  # Stack trace (most recent call first) of the read.
+  # [0]  file:/dictionary.c::132, 14
+  # [1]  file:/speller.c::153, 21
+  # [2]  [libc-start-main]

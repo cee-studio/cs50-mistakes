@@ -1,0 +1,10 @@
+bool check(const char *word)
+{
+    char *test;
+
+    int bucket = hash(word);
+    node *trav = table[bucket];
+
+    while (trav != NULL)
+    {
+        strcpy(trav->word, test);

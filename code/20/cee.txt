@@ -1,0 +1,8 @@
+ Memory access error: invalid parameter; abort execution.
+  # strlen's parameter (0x9e6bdc0) is not a valid pointer
+  # Stack trace (most recent call first) of the error.
+  # [0]  file:/musl-1.1.10/src/string/stpcpy.c::15, 16
+  # [1]  file:/musl-1.1.10/src/string/strcpy.c::8, 2
+  # [2]  file:/dictionary.c::37, 9
+  # [3]  file:/speller.c::113, 32
+  # [4]  [libc-start-main]

@@ -1,0 +1,5 @@
+  Memory access error: invalid parameter; abort execution.
+  # fclose's parameter (0xffa0503c) is not a valid FILE pointer.
+  # Stack trace (most recent call first) of the error.
+  # [0]  file:/recover.c::81, 3
+  # [1]  [libc-start-main]

@@ -1,0 +1,13 @@
+for (int i = 0; i < N; i++)
+    {
+        
+        node* temp = table[0];
+        
+        while (temp != NULL)
+        {
+            node* cursor = temp->next;
+            free(temp);
+            temp = cursor;
+        }
+        
+    }

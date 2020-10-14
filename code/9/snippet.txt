@@ -1,0 +1,7 @@
+Node* cursor = malloc(sizeof(Node));
+...
+    cursor->next = table[index];
+    //checks that cursor points to corect word
+    while(cursor->next != NULL)
+    {
+        if(strcasecmp(cursor->word,word) == 0) // memory error

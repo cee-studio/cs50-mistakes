@@ -1,0 +1,2 @@
+    int X = (hash (word)); // a negative value
+    if (table[X] == NULL)  // line 35

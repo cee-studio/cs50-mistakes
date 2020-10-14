@@ -1,0 +1,18 @@
+  Memory access warning: reading uninitialized memory.
+  # Reading 1 bytes from 0xff8a2abe will read undefined data.
+  #
+  # The memory-block-to-be-read (start:0xff8a2abc, size:46 bytes) is bound to 'word' at
+  #    file:/speller.c::68, 10
+  # It is not initialized.
+  #
+  #  0xff8a2abc           0xff8a2ae9
+  #  +--------------------------+
+  #  | memory-block-to-be-read  |
+  #  +--------------------------+
+  #              ^~~~~~~~~~
+  #      the read starts at 2 bytes offset of the memory block.
+  #
+  # Stack trace (most recent call first) of the read.
+  # [0]  file:/dictionary.c::36, 21
+  # [1]  file:/speller.c::113, 32
+  # [2]  [libc-start-main]

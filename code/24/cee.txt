@@ -1,0 +1,7 @@
+  Memory access error: dereferencing an uninitialized pointer; abort execution.
+  # Reading 1 bytes from a random address (0xf773879c).
+  #
+  # Stack trace (most recent call first) of the read.
+  # [0]  file:/dictionary.c::122, 5
+  # [1]  file:/speller.c::112, 32
+  # [2]  [libc-start-main]

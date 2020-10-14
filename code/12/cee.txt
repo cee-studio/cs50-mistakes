@@ -1,0 +1,6 @@
+  Memory access error: invalid parameter; abort execution.
+  # fscanf's 3rd parameter is not a valid pointer
+  # Stack trace (most recent call first) of the error.
+  # [0]  file:/dictionary.c::110, 10
+  # [1]  file:/speller.c::40, 19
+  # [2]  [libc-start-main]

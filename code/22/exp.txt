@@ -1,0 +1,1 @@
+table[0] always accesses the first element.

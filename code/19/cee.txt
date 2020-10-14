@@ -1,0 +1,19 @@
+  Memory access error: writing to the outside of a memory block; abort execution.
+  # Writing 1 bytes to 0x8fb1ded will clobber other memory blocks.
+  #
+  # The memory-block-to-be-written (start:0x8fb1dc0, size:45 bytes) is allocated at
+  #    file:/dictionary.c::70, 18
+  #
+  #  0x8fb1dc0           0x8fb1dec
+  #  +--------------------------+
+  #  |memory-block-to-be-written|......
+  #  +--------------------------+
+  #                              ^~~~~~~~~~
+  #        the write starts at 0x8fb1ded that is right after the memory block end.
+  #
+  # Stack trace (most recent call first) of the write.
+  # [0]  file:/musl-1.1.10/src/stdio/vfscanf.c::271, 12
+  # [1]  file:/musl-1.1.10/src/stdio/fscanf.c::28, 8
+  # [2]  file:/dictionary.c::81, 12
+  # [3]  file:/speller.c::40, 19
+  # [4]  [libc-start-main]

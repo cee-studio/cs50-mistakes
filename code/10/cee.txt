@@ -1,0 +1,17 @@
+  Memory access error: reading from the outside of a memory block; abort execution.
+  # Reading 4 bytes from 0x8090270 will read undefined values.
+  #
+  # The memory-block-to-be-read (start:0x8090274, size:184 bytes) is bound to 'table' at
+  #    file:/dictionary.c::29, 0
+  #
+  #                               0x8090274           0x809032b
+  #                               +--------------------------+
+  #                         ......| memory-block-to-be-read  |
+  #                               +--------------------------+
+  #                            ^~~~~~~~~~
+  #   the read starts at 0x8090270 that is 4 bytes before the memory block start.
+  #
+  # Stack trace (most recent call first) of the read.
+  # [0]  file:/dictionary.c::35, 9
+  # [1]  file:/speller.c::113, 32
+  # [2]  [libc-start-main]

@@ -1,0 +1,9 @@
+do {
+    j++;
+    while (Text[j] != '!' || Text[j] != '?' ||
+           Text[j] != '.') /*This is were the error is (all 3 of them)*/ 
+    {
+      j++;
+    }
+    SentencesZ++;
+  } while (j < strlen(Text));
