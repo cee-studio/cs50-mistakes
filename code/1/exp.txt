@@ -1,0 +1,1 @@
+argv is an array of null terminated strings, and argv itself is null terminated.
