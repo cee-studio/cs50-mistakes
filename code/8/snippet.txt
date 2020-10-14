@@ -1,0 +1,6 @@
+    node *trav = malloc(sizeof(node));
+    trav = table[index];  // trav is overwritten
+    while (1)
+    {
+        if (strcasecmp(word, trav->word) == 0)
+        {
