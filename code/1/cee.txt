@@ -1,0 +1,5 @@
+  Memory access error: invalid parameter; abort execution.
+  # strlen's parameter (0x0) is not a valid pointer
+  # Stack trace (most recent call first) of the error.
+  # [0]  file:/prog.c::9, 13
+  # [1]  [libc-start-main]

@@ -1,0 +1,4 @@
+int main(int argc, string argv[])
+{
+    int n = strlen(argv[1]);
+    ...
