@@ -1,0 +1,2 @@
+    char *dictionaryword[LENGTH];
+    while (fscanf(file, "%s", *dictionaryword) != EOF) // segfault here
