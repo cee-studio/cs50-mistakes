@@ -1,1 +1,1 @@
-Segmentation fault caused by calling fclose with a invalid FILE pointer.
+Segmentation fault caused by using a invalid FILE pointer.
