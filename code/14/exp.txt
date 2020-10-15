@@ -1,2 +1,2 @@
-Increasing the value of j in the inner nested loop without checking its upper bound.
+Increasing the value of `j` in the inner nested loop without checking its upper bound. This causes the code read undefined values from the outside of `Text`.
 

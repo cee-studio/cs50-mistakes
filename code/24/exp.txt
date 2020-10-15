@@ -1,0 +1,1 @@
+`root_node` is not initialized. `current_node` gets the undefined value from `root_node`.

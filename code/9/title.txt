@@ -1,1 +1,1 @@
-[Speller] Using uninitialized memory
+Segmentation fault caused by using uninitialized memory

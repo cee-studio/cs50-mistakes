@@ -1,1 +1,1 @@
- [Recover] Not understanding fread
+Segmentation fault caused by calling fclose with a invalid FILE pointer.

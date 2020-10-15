@@ -1,1 +1,1 @@
-table[hash(temp)] can be NULL.
+`table[hash(temp)]` can be NULL. `table[hash(temp)]->next` dereferences an illegal address.

@@ -1,0 +1,1 @@
+`fscanf`'s third parameter has to be a legal pointer. 

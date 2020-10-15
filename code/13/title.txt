@@ -1,1 +1,1 @@
- [Recover] A negligence
+Incorrect results caused by a negligence

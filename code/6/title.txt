@@ -1,1 +1,1 @@
- [Speller] Accessing the next field of NULL
+Segementation fault

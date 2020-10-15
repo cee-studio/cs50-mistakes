@@ -1,1 +1,1 @@
-[Speller] Accessing the next field of a NULL pointer
+Segmentation fault caused by accessing the next field of a NULL pointer

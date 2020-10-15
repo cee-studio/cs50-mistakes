@@ -1,1 +1,1 @@
-[Speller] Passing a NULL pointer to fscanf
+Segmentation fault caused by passing a NULL pointer to fscanf

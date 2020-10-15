@@ -1,1 +1,1 @@
-Passing a non-pointer to fscanf
+Segmentation fault

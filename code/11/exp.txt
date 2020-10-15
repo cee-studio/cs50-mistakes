@@ -1,0 +1,1 @@
+`cursor` are advanced twice in the for loop. the condition check `for (..; cursor; ..)` fails to exit when cursor is NULL. 

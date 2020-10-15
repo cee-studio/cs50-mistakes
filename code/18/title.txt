@@ -1,1 +1,1 @@
-[Speller] Reading uninitialized Memory
+Undefined behavior caused by reading uninitialized Memory

@@ -1,1 +1,1 @@
-[Speller.Trie] uninitialized pointer
+Segmentation fault caused by using an uninitialized pointer

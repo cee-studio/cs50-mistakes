@@ -64,10 +64,6 @@
 		"desc":"speller(pointer)"
 	},
 	{
-		"folder":"22",
-		"desc":"speller(negligence)"
-	},
-	{
 		"folder":"23",
 		"desc":"speller(sizeof)"
 	},

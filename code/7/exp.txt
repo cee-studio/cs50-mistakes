@@ -1,0 +1,1 @@
+`dictionaryword[LENGTH]` is not initialized. `*dictionaryword` is the value of `dictionaryword[0]`, which is an undefined value. It is used as a pointer passed to fscanf.

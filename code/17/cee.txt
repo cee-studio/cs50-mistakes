@@ -1,9 +1,16 @@
-  Memory access error: reading from a freed memory block; abort execution.
-  # Reading 4 bytes from 0x992d014 will read undefined values.
+  Memory access error: reading from a freed memory block; abort!
+  # Reading 4 bytes from 0x9a45014 will read undefined values.
   #
-  # The memory-block-to-be-read (start:0x992d010, size:112 bytes) was allocated at
+  # The memory-block-to-be-read (start:0x9a45010, size:112 bytes) was allocatedat
   #    file:/dictionary.c::35, 12
-  # It was freed, and its allocation location might be distorted by subsequent reuses.
+  #    file:/speller.c::40, 19
+  #    [libc-start-main]
+  # It has been freed at
+  #    file:/dictionary.c::182, 20
+  #    file:/dictionary.c::167, 9
+  #    file:/speller.c::152, 21
+  #    [libc-start-main]
+  # The allocation/free locations could have been distorted by subsequent reuses.
   #
   #
   # Stack trace (most recent call first) of the read.

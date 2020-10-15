@@ -1,1 +1,1 @@
-[Speller] Allocation is too small
+Memory corruption caused by an insufficient memory allocation

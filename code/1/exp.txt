@@ -1,1 +1,1 @@
-argv is an array of null terminated strings, and argv itself is null terminated.
+`argv` is an array of null terminated strings, and `argv` itself is null terminated. If no CLI option is provided, `argv[1]` is 0.

@@ -1,1 +1,1 @@
- [Speller] Not understanding free
+Undefined behavior caused by not understanding free

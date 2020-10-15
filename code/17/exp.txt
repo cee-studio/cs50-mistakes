@@ -1,0 +1,1 @@
+`current` points to a memory blocked freed in the first `nullFree` call.

@@ -1,1 +1,1 @@
-[Speller] A negligence
+Segmentation fault caused by a negligence

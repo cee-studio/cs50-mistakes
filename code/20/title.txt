@@ -1,1 +1,1 @@
-[Speller] Using an uninitialized pointer
+Segmentation fault caused by using undefined value as pointer

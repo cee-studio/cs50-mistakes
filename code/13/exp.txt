@@ -1,1 +1,1 @@
-byte has the jpg data, but buffer is used to check for jpg header.
+`byte` has the jpg data, but `buffer` is used to check for jpg header.

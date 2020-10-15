@@ -1,1 +1,1 @@
- [Speller.Trie] Use after free
+Undefined behavior caused by using freed memory blocks
