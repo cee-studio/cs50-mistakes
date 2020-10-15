@@ -1,1 +1,1 @@
-`cursori->word` is not initialized, and its memory contains undefined values. 
+`cursor->word` is not initialized, and its memory contains undefined values. 

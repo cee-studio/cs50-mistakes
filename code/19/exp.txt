@@ -1,1 +1,1 @@
-`word` is one byte short to hold the null terminator
+`word` is one byte too short and will not hold the null terminator.

@@ -7,9 +7,9 @@ bool unload(void)
         printf ("table[%d] = %p\n", i, table[i]);
         for (cursor = table[i]; 
              cursor; 
-             cursor = cursor->next) { // this advance the NULL cursor again 
+             cursor = cursor->next) { // this advances the NULL cursor again 
             tmp = cursor;
-            cursor = cursor->next; // this advance cursor, and cursor become NULL
+            cursor = cursor->next; // this advances the cursor, and cursor becomes NULL
             free(tmp);
         }
     }

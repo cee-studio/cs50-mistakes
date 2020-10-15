@@ -1,1 +1,1 @@
-`*word` has `char` type and `sizeof(*word)` is just 1. 
+`*word` is `char` type and `sizeof(*word)` is just 1. 

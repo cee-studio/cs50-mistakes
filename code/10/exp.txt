@@ -1,1 +1,1 @@
-`table` has only N elements, `X` might be great N or less than 0. 
+`table` has only N elements; `X` might be greater than N or less than 0. 

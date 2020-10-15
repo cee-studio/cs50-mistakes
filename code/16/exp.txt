@@ -1,1 +1,1 @@
-`img` has been closed, and is passed to `fclose` the second time.
+`img` has already been closed, and is passed to `fclose` the second time.

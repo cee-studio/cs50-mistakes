@@ -1,1 +1,1 @@
-node `n` is immediately freed after adding to the hash table
+node `n` is immediately freed after adding it to the hash table.

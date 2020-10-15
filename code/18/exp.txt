@@ -1,1 +1,1 @@
-`word` is not fully initialized, and the loop is not terminated at \0.
+`word` is not fully initialized, and the loop is not terminated at `\0`.

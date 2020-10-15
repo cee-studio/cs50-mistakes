@@ -19,7 +19,7 @@ int main(int argc, string argv[])
 
 
 ### 2. [Recover] Too small to hold the null terminator
-`filename` is one byte less to hold the null terminator. 
+`filename` is one byte too small to hold the null terminator. 
 ```
 char filename[8]; // Array to store my filename
 ...
@@ -111,7 +111,7 @@ sprintf(filename, "%03i.jpg", file_count);
 
 
 ### 7. [Speller] Passing a non-pointer to `fscanf`
-`dictionaryword` is address of an array, `*dictionaryword` is the value of the array's first element.
+`dictionaryword` is address of an array; `*dictionaryword` is the value of the array's first element.
 ```
     char *dictionaryword[LENGTH];
     while (fscanf(file, "%s", *dictionaryword) != EOF) // segfault here
@@ -128,7 +128,7 @@ sprintf(filename, "%03i.jpg", file_count);
 
 
 ### 8. [Speller] A negligence
-trav is assigned to the address of a new memoy block, but it is
+`trav` is assigned to the address of a new memoy block, but it is
 immediately overwritten by another value.
 ```
     node *trav = malloc(sizeof(node));
@@ -262,7 +262,7 @@ while (fscanf(file, "%s", str) != EOF) {
 
 
 ### 13. [Recover] A negligence
-`byte` has the jpg data, but `buffer` is used to check for jpg header. 
+`byte` holds the jpg data, but `buffer` is used to check for jpg header. 
 ```
     while ((fread(byte, 512, 1, card)) == 1)
     {
@@ -327,7 +327,7 @@ do {
 
 
 ### 15. [Speller] Not understanding free
-a node is immediately freed after adding to the hash table
+a node is immediately freed after adding it to the hash table.
 ```
     while(fscanf(file, "%s", w) != EOF)
     {

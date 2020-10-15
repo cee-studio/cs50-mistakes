@@ -1,1 +1,1 @@
-`test` is not initialized
+`test` is not initialized.
