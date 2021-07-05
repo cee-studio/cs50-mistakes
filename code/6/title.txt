@@ -1,1 +1,1 @@
-Segementation fault
+Segmentation fault
